@@ -6,6 +6,7 @@ react-elemap
 Why write out repetitive props on every element, when JavaScript can write them for you?
 
 ```jsx
+// Add `onChange` and `value` props to inputs, based on `name`
 elemap(
   <form name='data_we_will_steal_muahaha'>
     <input name='first_name' />
