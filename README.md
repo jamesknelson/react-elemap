@@ -68,6 +68,7 @@ function NameList() {
 
 ### Example: Add `value` and `onChange` props to forms based on their `name`
 
+```jsx
 const form =
   <form>
     <fieldset name='private_data_we_will_steal_muahaha'>
@@ -89,6 +90,7 @@ const formWithHandlers = elemap(form, el =>
 
 ### Example: Remove all elements with the class `note`
 
+```jsx
 function removeNotes(root) {
   return elemap(root, el =>
     // Does the element have a `className` that contains `note`?
