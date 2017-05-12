@@ -3,7 +3,24 @@ react-elemap
 
 **A tool for transforming React elements.**
 
-Why write out repetitive props on every element in your component, when you can modify them programatically?
+Why write out repetitive props on every element, when JavaScript can write them for you?
+
+```jsx
+elemap(
+  <form name='data_we_will_steal_muahaha'>
+    <input name='first_name' />
+    <input name='last_name' />
+    <input name='left_sock_color' />
+  </form>,
+  el =>
+    (el.type !== 'input' || !el.props.name)
+      ? el
+      : React.cloneElement(el, {
+          value: this.state.form[el.props.name],
+          onChange: this.handleChange.bind(this, el.props.name)
+        })
+)
+```
 
 With react-elemap, you can map JSX and React elements just like you can map arrays. With a single function call, you can:
 
@@ -28,6 +45,8 @@ Usage
 -----
 
 The `elemap(element, mapFn: (Element) => Element)` function takes a React Element (i.e. a JSX tag) and a "map" function. It then runs the map function on each nested element. It works from the deepest to the shallowest, before finally running the map function on the passed in element.
+
+Note: only elements that belong to the same component as the passed-in element are mapped. Elements that belong to other components, such as `children`, are not mapped.
 
 ### The "map" function
 
@@ -110,6 +129,7 @@ function Document({ showNotes }) {
 
   return showNotes ? content : removeNotes(content)
 }
+```
 
 ### Example: Make things more complicated without actually doing anything
 
