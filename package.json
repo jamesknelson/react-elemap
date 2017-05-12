@@ -1,0 +1,33 @@
+{
+  "name": "react-elemap",
+  "version": "0.1.0",
+  "description": "Recursviely transform React elements",
+  "author": "James K Nelson <james@jamesknelson.com>",
+  "license": "MIT",
+  "main": "elemap.js",
+  "scripts": {
+    "test": "mocha test.js",
+    "test:watch": "mocha --watch test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jamesknelson/react-elemap.git"
+  },
+  "keywords": [
+    "react",
+    "map",
+    "element"
+  ],
+  "peerDependencies": {
+    "react": "^15.4.2"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "enzyme": "^2.8.2",
+    "jsdom": "^10.1.0",
+    "mocha": "^3.0.2",
+    "react": "^15.4.2",
+    "react-addons-test-utils": "^15.5.1",
+    "react-dom": "^15.5.4"
+  }
+}
